@@ -1,4 +1,4 @@
-package com.udemy.ms.hrworker.resources;
+package com.udemy.ms.worker.resources;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.udemy.ms.hrworker.entities.Worker;
-import com.udemy.ms.hrworker.repositories.WorkerRepository;
+import com.udemy.ms.worker.entities.Worker;
+import com.udemy.ms.worker.repositories.WorkerRepository;
 
 @RestController
 @RequestMapping("/workers")

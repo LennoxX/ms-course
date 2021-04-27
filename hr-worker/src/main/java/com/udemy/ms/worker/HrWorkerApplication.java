@@ -1,4 +1,4 @@
-package com.udemy.ms.hrworker;
+package com.udemy.ms.worker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
