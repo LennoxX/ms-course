@@ -1,4 +1,4 @@
-package com.udemy.ms.hrworker.entities;
+package com.udemy.ms.worker.entities;
 
 import java.io.Serializable;
 
