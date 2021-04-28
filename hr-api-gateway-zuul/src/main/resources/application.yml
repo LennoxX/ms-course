@@ -1,0 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8765
+spring:
+  application:
+    name: hr-api-gateway-zuul
+zuul:
+  routes:
+    oauth:
+      sensitive-headers: Cookie,Set-Cookie
+    payroll:
+      path: /hr-payroll/**
+      service-id: hr-payroll
+    worker:
+      path: /hr-worker/**
+      service-id: hr-worker
