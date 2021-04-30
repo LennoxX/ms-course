@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,9 @@ public class WorkerResource {
 	@Autowired
 	private WorkerRepository repository;
 	
+	@Value("${test.config}")
+	private String config;
+	
 	@Autowired
 	private Environment env;
 
@@ -38,5 +42,12 @@ public class WorkerResource {
 		logger.info("PORT: " + env.getProperty("local.server.port"));
 		
 		return ResponseEntity.ok(repository.findById(id).get());
+	}
+	
+	@GetMapping(value="/configs")
+	public ResponseEntity<String> getConfigs() {
+		logger.info("CONFIG: " + config);
+		
+		return ResponseEntity.ok().body("OK");
 	}
 }
