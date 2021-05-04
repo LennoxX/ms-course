@@ -10,10 +10,16 @@ spring:
 zuul:
   routes:
     oauth:
-      sensitive-headers: Cookie,Set-Cookie
+      sensitive-headers: Cookie,Set-Cookie  
+      path: /hr-oauth/**
+      service-id: hr-oauth
     payroll:
       path: /hr-payroll/**
       service-id: hr-payroll
     worker:
       path: /hr-worker/**
       service-id: hr-worker
+    user:
+      path: /hr-user/**
+      service-id: hr-user
+    
